@@ -855,6 +855,10 @@ section,
   background-color: var(--accent-color);
 }
 
+.portfolio-info li {
+  font-size: 13px;
+}
+
 .portfolio .portfolio-content .portfolio-info p {
   position: absolute;
   bottom: 10px;
