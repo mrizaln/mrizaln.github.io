@@ -12,19 +12,22 @@
 --------------------------------------------------------------*/
 /* Fonts */
 :root {
-  --default-font: "Roboto",  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --heading-font: "Raleway",  sans-serif;
-  --nav-font: "Poppins",  sans-serif;
+  /* --default-font: "Roboto",  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; */
+  /* --heading-font: "Raleway",  sans-serif; */
+  /* --nav-font: "Poppins",  sans-serif; */
+  --default-font: "JetBrainsMono", monospace;
+  --heading-font: "JetBrainsMono", monospace;
+  --nav-font: "JetBrainsMono", monospace;
 }
 
 /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
 :root { 
-  --background-color: #ffffff; /* Background color for the entire website, including individual sections */
-  --default-color: #272829; /* Default color used for the majority of the text content across the entire website */
-  --heading-color: #050d18; /* Color for headings, subheadings and title throughout the website */
+  --background-color: #2e3440; /* Background color for the entire website, including individual sections */
+  --default-color: #e5e9f0; /* Default color used for the majority of the text content across the entire website */
+  --heading-color: #eceff4; /* Color for headings, subheadings and title throughout the website */
   --accent-color: #149ddd; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
-  --surface-color: #ffffff; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
-  --contrast-color: #ffffff; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
+  --surface-color: #3b4252; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
+  --contrast-color: #2e3440; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
 }
 
 /* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
@@ -40,16 +43,17 @@
 /* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
 
 .light-background {
-  --background-color: #f4fafd;
-  --surface-color: #ffffff;
+  --background-color: #434c5e;
+  --surface-color: #4c566a;
 }
 
 .dark-background {
-  --background-color: #040b14;
-  --default-color: #ffffff;
-  --heading-color: #ffffff;
-  --surface-color: #151f2b;
-  --contrast-color: #ffffff;
+  --background-color: #2e3440;
+  --default-color: #e5e9f0;
+  --heading-color: #eceff4;
+  --accent-color: #149ddd;
+  --surface-color: #3b4252;
+  --contrast-color: #2e3440;
 }
 
 /* Smooth scroll */
@@ -560,6 +564,8 @@ section,
   height: 100%;
   object-fit: cover;
   z-index: 1;
+  loading: lazy;
+  opacity: 0.8;
 }
 
 .hero:before {
@@ -579,7 +585,6 @@ section,
   margin: 0;
   font-size: 64px;
   font-weight: 700;
-  background-color: #22243670
 }
 
 .hero p {
@@ -828,6 +833,7 @@ section,
 
 .portfolio .portfolio-content img {
   transition: 0.3s;
+  loading: lazy,
 }
 
 .portfolio .portfolio-content .portfolio-info {
@@ -847,6 +853,10 @@ section,
   color: #ffffff;
   display: inline-block;
   background-color: var(--accent-color);
+}
+
+.portfolio-info li {
+  font-size: 13px;
 }
 
 .portfolio .portfolio-content .portfolio-info p {
