@@ -148,7 +148,7 @@
     "technologies": ["C++", "TUI"],
     "techniques": ["Console cursor control"],
     "date-start": "Jan 2022",
-    "date-end": "Dec 2024 (recently rewrited)",
+    "date-end": "Dec 2024 (recently rewritten)",
     "url": "https://github.com/mrizaln/hangman",
     "summary": "This project was my first endeavor into C++ programming. I created this project to learn the basics of C++ programming. The project is a simple hangman game that is played in the console. The game is very simple, the player has to guess the word by guessing the letters. The player has a limited number of guesses before the game ends. The game has a simple ASCII art of the hangman that is drawn as the player guesses the wrong letter.<br><br>The code was <a href='https://github.com/mrizaln/hangman/blob/80798cb485d83074474bf2c330333b607efe164b/hangman.cpp'>awful</a>, so recently I decided to rewrite the code to be more modern and be more flexible by allowing custom word list (by default it uses /usr/share/dict/words).",
     "role": ["Author"],
