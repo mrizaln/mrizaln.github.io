@@ -28,7 +28,7 @@ async function fillProjectDetails(proj) {
   date.innerHTML = `${proj["date-start"]} - ${proj["date-end"]}`;
   url.innerHTML = proj["url"];
   urlA.href = proj["url"];
-  role.innerHTML = proj["role"];
+  role.innerHTML = proj["role"].join(", ");
 
   if (proj["preview-vid"]) {
     let source = document.createElement("source");
