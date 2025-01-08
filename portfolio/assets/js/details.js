@@ -59,12 +59,13 @@ async function main() {
   let json = await fetch("assets/json/proj-details.json");
   json = await json.json();
 
-  if (json[arg] === undefined) {
-    alert(`Project ${arg} not found`);
+  if (json[arg]) {
+    fillProjectDetails(json[arg]);
+  } else {
+    // go back to main page
+    window.location.href = "index.html";
     return;
   }
-
-  fillProjectDetails(json[arg]);
 }
 
 main();
