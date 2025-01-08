@@ -28,7 +28,7 @@ async function fillProjectDetails(proj) {
   date.innerHTML = `${proj["date-start"]} - ${proj["date-end"]}`;
   url.innerHTML = proj["url"];
   urlA.href = proj["url"];
-  role.innerHTML = proj["role"];
+  role.innerHTML = proj["role"].join(", ");
 
   if (proj["preview-vid"]) {
     let source = document.createElement("source");
@@ -59,12 +59,13 @@ async function main() {
   let json = await fetch("assets/json/proj-details.json");
   json = await json.json();
 
-  if (json[arg] === undefined) {
-    alert(`Project ${arg} not found`);
+  if (json[arg]) {
+    fillProjectDetails(json[arg]);
+  } else {
+    // go back to main page
+    window.location.href = "index.html";
     return;
   }
-
-  fillProjectDetails(json[arg]);
 }
 
 main();
