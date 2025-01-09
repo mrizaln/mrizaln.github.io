@@ -54,8 +54,6 @@ async function fillProjectDetails(proj) {
 
 async function main() {
   const arg = await getQueryParam("proj");
-  console.log(arg);
-
   let json = await fetch("assets/json/proj-details.json");
   json = await json.json();
 

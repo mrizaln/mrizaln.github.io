@@ -564,8 +564,8 @@ section,
   height: 100%;
   object-fit: cover;
   z-index: 1;
-  loading: lazy;
   opacity: 0.8;
+  filter: blur(2px);
 }
 
 .hero:before {
@@ -833,7 +833,6 @@ section,
 
 .portfolio .portfolio-content img {
   transition: 0.3s;
-  loading: lazy,
 }
 
 .portfolio .portfolio-content .portfolio-info {
