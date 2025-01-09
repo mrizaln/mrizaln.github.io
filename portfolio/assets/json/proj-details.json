@@ -9,7 +9,8 @@
     "summary": "Ever since I saw a video about Mandelbrot Set on Youtube, I've always wanted to make <strong>my own</strong> renderer. This is my attempt. The rendering is done in the CPU so it's very slow even though I have utilized multithreading.</br></br>The next attempt is rendering a <a href='proj-details.html?proj=julia-set'>Julia Set</a> but using GPU rendering technique which is much much faster.",
     "role": ["Author"],
     "preview-vid": "assets/vid/portfolio/mandelbrot-set.webm",
-    "preview-img": "assets/img/portfolio/mandelbrot-set.webp"
+    "preview-img": "assets/img/portfolio/mandelbrot-set.webp",
+    "preview-img-thumb": "assets/img/portfolio/mandelbrot-set.thumb.webp"
   },
   "julia-set": {
     "name": "Julia Set Renderer",
@@ -20,8 +21,9 @@
     "url": "https://github.com/mrizaln/julia-set",
     "summary": "Julia Set is similar to Mandelbrot in that it shows <em>pretty images</em> (what a shallow understanding, haha). The similarity of Julia Set and Mandelbrot Set lies in the equation that produces the set, both uses the same equation but different variable. Since the Mandelbrot Set and Julia Set are related, this renderer also draws the Mandelbrot in the background. If the point in which the Julia Set is evaluated lies inside the Mandelbrot Set (white), the Julia Set will be connected, otherwise the Julia Set will be disconnected.</br></br>Unlike previous attempt at rendering a <a href='proj-details.html?proj=mandelbrot-set'>Mandelbrot Set</a> using CPU rendering, this one uses GPU rendering (leveraging GLSL). This makes the renderer much faster and responsive.",
     "role": ["Author"],
+    "preview-vid": "assets/vid/portfolio/julia-set.webm",
     "preview-img": "assets/img/portfolio/julia-set.webp",
-    "preview-vid": "assets/vid/portfolio/julia-set.webm"
+    "preview-img-thumb": "assets/img/portfolio/julia-set.thumb.webp"
   },
   "ray-tracing": {
     "name": "Ray Tracing",
@@ -32,8 +34,9 @@
     "url": "https://github.com/mrizaln/ray-tracing-rust",
     "summary": "Ray tracing has always been a mystery to me. Ever since I stumble upon it, I've always wanted to learn more of this rendering technique. This project is my attempt at creating a ray tracer. I followed <a href='https://raytracing.github.io/'>Ray Tracing in One Weekend</a> and implemented it in Rust just because.",
     "role": ["Author"],
+    "preview-vid": null,
     "preview-img": "assets/img/portfolio/ray-tracing.webp",
-    "preview-vid": null
+    "preview-img-thumb": "assets/img/portfolio/ray-tracing.thumb.webp"
   },
   "game-of-life": {
     "name": "Conway's Game of Life",
@@ -44,8 +47,9 @@
     "url": "https://github.com/mrizaln/game-of-life",
     "summary": "I have always liked Conway's Game of Life simulation. This very complex system arise from simple set of rules fascinates me. This project allows me to create such simulation. I can directly modify the cells state on the simulation so that I can create anything I want. For example, in the preview I created a glider gun and a period-3 oscillator.",
     "role": ["Author"],
+    "preview-vid": "assets/vid/portfolio/game-of-life.webm",
     "preview-img": "assets/img/portfolio/game-of-life.webp",
-    "preview-vid": "assets/vid/portfolio/game-of-life.webm"
+    "preview-img-thumb": "assets/img/portfolio/game-of-life.thumb.webp"
   },
   "simple-ecs": {
     "name": "Simple ECS",
@@ -56,8 +60,9 @@
     "url": "https://github.com/mrizaln/simple-ecs",
     "summary": "Entity Component System (ECS) is a programming technique that is on the rise in the game development community. ECS promises games to have better performance when working with large number of entities if it was implemented in it. I implemented this ECS using very modern C++ (C++23) which allows me to try different approach from the <a href='https://austinmorlan.com/posts/entity_component_system/'>reference</a> I'm using to implement this project. My implementation uses a templated classes to generate the ECS setup so I can expand it without much of a hassle. On this occasion I learned so much about template metaprogramming that allows this approach to be viable.",
     "role": ["Author"],
+    "preview-vid": "assets/vid/portfolio/simple-ecs.webm",
     "preview-img": "assets/img/portfolio/simple-ecs.webp",
-    "preview-vid": "assets/vid/portfolio/simple-ecs.webm"
+    "preview-img-thumb": "assets/img/portfolio/simple-ecs.thumb.webp"
   },
   "pong": {
     "name": "Pong",
@@ -68,8 +73,9 @@
     "url": "https://github.com/mrizaln/pong-cpp2",
     "summary": "This project comes into existence from me watching a <a href='https://www.youtube.com/watch?v=8U3hl8XMm8c'>talk</a> from Herb Sutter about Cppfront and C++ syntax 2.0. This technology allows the developer to generate (transpile to) C++ code from a higher level language which I will call C++2. Just for fun I tried to use this language which pretty much feels like C++ (value semantics, RAII) but with better syntax (C++2 aims to have a unified syntax for all the declaration, from variables, functions, closures, classes, namespaces, all of them).<br><br>In order for me to try the language effectively, I decided to try making a game in this case Pong since it seems to be easy to implement. The game is created with the help of SFML which was the first time I use it. It was fairly easy to use using its built-in primitive renderable objects. Since it's a pong, a collision logic also implemented.",
     "role": ["Author"],
+    "preview-vid": "assets/vid/portfolio/pong.webm",
     "preview-img": "assets/img/portfolio/pong.webp",
-    "preview-vid": "assets/vid/portfolio/pong.webm"
+    "preview-img-thumb": "assets/img/portfolio/pong.thumb.webp"
   },
   "aoc-vis": {
     "name": "AOC Algotihm Visualizer",
@@ -80,8 +86,9 @@
     "url": "https://github.com/mrizaln/aoc-2024-cpp",
     "summary": "This one is actually part of a a project. I am participating in <a href='https://adventofcode.com/'>Advent of Code</a> 2024 and I want to visualize the algorithm (working on 2D data) I use to solve the problem. I use SFML to render the visualization.<br><br>The approach to rendering the algorithm is simple. At each step I update the algorithm working on the data, capture the state and convert them to an image data (RGB colors) then send it as Texture to the SFML renderer. The renderer then displays the texture on the window. The visualization is done in real-time so I can see the algorithm working on the data.",
     "role": ["Author"],
+    "preview-vid": "assets/vid/portfolio/aoc-vis.webm",
     "preview-img": "assets/img/portfolio/aoc-vis.webp",
-    "preview-vid": "assets/vid/portfolio/aoc-vis.webm"
+    "preview-img-thumb": "assets/img/portfolio/aoc-vis.thumb.webp"
   },
   "qoipp": {
     "name": "A Quite OK Image Format Codec in C++",
@@ -92,8 +99,9 @@
     "url": "https://github.com/mrizaln/qoipp",
     "summary": "At the end of a <a href='https://www.youtube.com/watch?v=EFUYNoFRHQI'>YouTube video</a> about PNG and how it works, the creator of said video mentioned an alternative image format called <a href='https://qoiformat.org'>QOI</a> which was created by a single person. Unlike PNG which was a very complex mechanism of image lossless compression, QOI was a very simple format which was very surprising since the compression rate is comparable to PNG! Intrigued by this, I decided to implement a codec for this format in C++ by following the <a href='https://qoiformat.org/qoi-specification.pdf'>specificiation</a> (just one page, how simple is that!) directly.",
     "role": ["Author"],
+    "preview-vid": null,
     "preview-img": "assets/img/portfolio/qoipp.webp",
-    "preview-vid": null
+    "preview-img-thumb": "assets/img/portfolio/qoipp.thumb.webp"
   },
   "dtl-modern": {
     "name": "Arbitrary Sequence Diff Library",
@@ -104,8 +112,9 @@
     "url": "https://github.com/mrizaln/dtl-modern",
     "summary": "There is no good diff library in C++. I found one, but it has very old API design, philosophy and inflexible in general. This one is a direct fork of said library, <a href='https://github.com/cubicdaiya/dtl'>dtl</a>. This fork aims to modernize the library by refactoring the code, adding more features, and making the API more flexible and modern (C++20 ranges support). The library is used to compare two sequences and produce a diff of the two sequences, of any type as long as you provide a comparator for them.<br><br>Really the reason I forked and modernize the library is to have an easy to use pretty diff printer on test output on my projects :D",
     "role": ["Author", "Contributor"],
+    "preview-vid": null,
     "preview-img": "assets/img/portfolio/dtl-modern.webp",
-    "preview-vid": null
+    "preview-img-thumb": "assets/img/portfolio/dtl-modern.thumb.webp"
   },
   "cppread": {
     "name": "Simple Console Input Library with Built-in Parser",
@@ -116,8 +125,9 @@
     "url": "https://github.com/mrizaln/cppread",
     "summary": "Out of frustration of the C++ i/o system, I decided to create a simple library that allows me to read input from the console easily. The library is designed to be simple to use and easy to extend. The library also has a built-in parser that can parse the input into a specific type (int, float, string, etc) or you can create your own parser to parse the input into a custom type or override an existing parser for a type. The main feature of the library aside from the custom parsing is that it allows for easy input for multiple values (for example, for birth date input in 'y/m/d' format).",
     "role": ["Author"],
+    "preview-vid": null,
     "preview-img": "assets/img/portfolio/cppread.webp",
-    "preview-vid": null
+    "preview-img-thumb": "assets/img/portfolio/cppread.thumb.webp"
   },
   "glfw-cpp": {
     "name": "GLFW RAII Wrapper for C++ (and more)",
@@ -128,8 +138,9 @@
     "url": "https://github.com/mrizaln/glfw-cpp",
     "summary": "C is not my favorite language. It lacks type safety, namespaces, and especially RAII. GLFW is a C library that is used to create windows and OpenGL contexts. This project is essentially a wrapper that fixed the issues I have with GLFW. The wrapper is designed to be type safe, RAII, and easy to use. This library also eliminates the need for global/hidden state that GLFW has (partially, the global state in the C++ side still exists to communicate with the global state on the C side) by wrapping the main glfw object as a RAII object. This library also change the way of the events handled, instead of using callback functions, it uses polling mechanism to get the events. The biggest aim of this GLFW is to make it easy to create multiple windows that may live independently on its own thread which I considers as a very important feature.",
     "role": ["Author"],
+    "preview-vid": null,
     "preview-img": "assets/img/portfolio/glfw-cpp.webp",
-    "preview-vid": null
+    "preview-img-thumb": "assets/img/portfolio/glfw-cpp.thumb.webp"
   },
   "loxx": {
     "name": "Lox Programming Language Interpreter",
@@ -140,8 +151,9 @@
     "url": "https://github.com/mrizaln/loxx",
     "summary": "Programming language is a very interesting topic for me. I have always wanted to create my own language interpreter/compiler. This project is my attempt at creating an interpreter for a language called Lox. Lox is a very simple language created by <a href='https://craftinginterpreters.com/'>Bob Nystrom</a> in his book <em>Crafting Interpreters</em>. The interpreter is implemented in Rust just because. The interpreter is implemented in a very simple way, it lexes the input, parses the tokens, and interprets the AST. The interpreter is very simple and does not have any optimization.<br><br>At the moment I have only implemented a Treewalk Interpreter whith reference counting (Rust's Rc) as the garbage collection mechanism. In the future I plan on implementing a bytecode interpreter with the garbage collection implemented manually in the Rust code.",
     "role": ["Author"],
+    "preview-vid": null,
     "preview-img": "assets/img/portfolio/loxx.webp",
-    "preview-vid": null
+    "preview-img-thumb": "assets/img/portfolio/loxx.thumb.webp"
   },
   "hangman": {
     "name": "Hangman",
@@ -152,8 +164,9 @@
     "url": "https://github.com/mrizaln/hangman",
     "summary": "This project was my first endeavor into C++ programming. I created this project to learn the basics of C++ programming. The project is a simple hangman game that is played in the console. The game is very simple, the player has to guess the word by guessing the letters. The player has a limited number of guesses before the game ends. The game has a simple ASCII art of the hangman that is drawn as the player guesses the wrong letter.<br><br>The code was <a href='https://github.com/mrizaln/hangman/blob/80798cb485d83074474bf2c330333b607efe164b/hangman.cpp'>awful</a>, so recently I decided to rewrite the code to be more modern and be more flexible by allowing custom word list (by default it uses /usr/share/dict/words).",
     "role": ["Author"],
+    "preview-vid": "assets/vid/portfolio/hangman.webm",
     "preview-img": "assets/img/portfolio/hangman.webp",
-    "preview-vid": "assets/vid/portfolio/hangman.webm"
+    "preview-img-thumb": "assets/img/portfolio/hangman.thumb.webp"
   },
   "calmind": {
     "name": "Calmind App - Meditation App",
@@ -164,7 +177,8 @@
     "url": "https://github.com/fahmiidris007/CapstoneProjectBangkit",
     "summary": "This project is a collaborative project with my friends in Bangkit Academy as the final project. The project is a meditation app that is designed to help people meditate. This application integrates an AI (Machine Learning Model that can infer emotion from text) to suggest the best meditation session for the user (in the form of nature sounds). I, for the most part, is resposible for integrating this feature locally (no cloud) while also working on other aspect of the application UI logic (the UI design is done by my friend). The app is written in Kotlin and uses Android Studio as the IDE.",
     "role": ["Contributor"],
+    "preview-vid": null,
     "preview-img": "assets/img/portfolio/calmind.webp",
-    "preview-vid": null
+    "preview-img-thumb": "assets/img/portfolio/calmind.thumb.webp"
   }
 }
