@@ -203,13 +203,13 @@ function main() {
 
   initTypedJs();
   animateSkills();
-  initGlightbox();
   initSwiperSliders();
+  initGlightbox();
+  initIsotope();
 
   navmenuScrollspy();
   toggleScrollTop();
   correctScrollingPosition();
-  initIsotope();
 }
 
 main();
