@@ -306,6 +306,26 @@
     ],
     "url": "https://github.com/mrizaln/mandelbrot-set"
   },
+  "opt-iter": {
+    "date-end": "Feb 2025",
+    "date-start": "Mar 2025",
+    "name": "Optional-based input iterator for C++",
+    "preview-img": "assets/img/portfolio/opt-iter.webp",
+    "preview-img-thumb": "assets/img/portfolio/opt-iter.thumb.webp",
+    "preview-vid": null,
+    "role": [
+      "Author"
+    ],
+    "summary": "It's not uncommon to want to create a generator for a particular task and stop when some condition is met. This library attempts to provide wrappers for input range/generator pattern, as describe previously that are compatible with range-based for loop and the C++20 ranges library. Creating the wrapper yourself is tedious due to the amount of boilerplate required and is error-prone, so providing an easy to use wrapper for this pattern is the main motivation of creating this library. This library kinda does the same thing what <generator> does but without coroutine. If you have access to that then you should use that one, otherwise this library is very handy.",
+    "techniques": [
+      "Iterator",
+      "Ranges"
+    ],
+    "technologies": [
+      "C++"
+    ],
+    "url": "https://github.com/mrizaln/opt-iter"
+  },
   "pong": {
     "date-end": "Sep 2024",
     "date-start": "Apr 2024",
