@@ -22,7 +22,7 @@
   "ascopet": {
     "date-end": "Apr 2025",
     "date-start": "Apr 2025",
-    "name": "Asyncrhonous scope time measurement library",
+    "name": "Asynchronous scope time measurement library",
     "preview-img": "assets/img/portfolio/ascopet.webp",
     "preview-img-thumb": "assets/img/portfolio/ascopet.thumb.webp",
     "preview-vid": null,
@@ -84,6 +84,26 @@
       "Circular buffer"
     ],
     "url": "https://github.com/mrizaln/circbuf"
+  },
+  "cmakestrap": {
+    "date-end": "Apr 2025",
+    "date-start": "Apr 2025",
+    "name": "Simpler CMake project initializer script for C++",
+    "preview-img": "assets/img/portfolio/cmakestrap.webp",
+    "preview-img-thumb": "assets/img/portfolio/cmakestrap.thumb.webp",
+    "preview-vid": null,
+    "role": [
+      "Author"
+    ],
+    "summary": "There are many project initializer script for C++ with CMake, the most famous one is cmake-init. Unfortunately, it generates too much files for my liking. Looking at this issue, that has been up for 2 years, it seems that the author does not have the time to provide an option to generate a simpler, thinner, project structure. This script is an attempt to provide that.",
+    "techniques": [
+      "Packaging"
+    ],
+    "technologies": [
+      "Python",
+      "PyPI"
+    ],
+    "url": "https://pypi.org/project/cmakestrap/"
   },
   "cppread": {
     "date-end": "Nov 2024",
