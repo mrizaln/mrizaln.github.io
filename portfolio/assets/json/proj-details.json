@@ -1,5 +1,6 @@
 {
   "aoc-vis": {
+    "filter": ["filter-cpp", "filter-sfml"],
     "date-end": "Dec 2024",
     "date-start": "Dec 2024",
     "name": "AOC Algotihm Visualizer",
@@ -20,6 +21,7 @@
     "url": "https://github.com/mrizaln/aoc-2024-cpp"
   },
   "ascopet": {
+    "filter": ["filter-cpp", "filter-library"],
     "date-end": "Apr 2025",
     "date-start": "Apr 2025",
     "name": "Asynchronous scope time measurement library",
@@ -46,6 +48,7 @@
     "url": "https://github.com/mrizaln/ascopet"
   },
   "calmind": {
+    "filter": ["filter-mobile"],
     "date-end": "Jun 2023",
     "date-start": "May 2023",
     "name": "Calmind App - Meditation App",
@@ -66,6 +69,7 @@
     "url": "https://github.com/fahmiidris007/CapstoneProjectBangkit"
   },
   "circbuf": {
+    "filter": ["filter-cpp", "filter-library"],
     "date-end": "Jan 2025",
     "date-start": "Jun 2024",
     "name": "circbuf - Circular Buffer Library",
@@ -86,6 +90,7 @@
     "url": "https://github.com/mrizaln/circbuf"
   },
   "cmakestrap": {
+    "filter": ["filter-python"],
     "date-end": "Apr 2025",
     "date-start": "Apr 2025",
     "name": "Simpler CMake project initializer script for C++",
@@ -106,6 +111,7 @@
     "url": "https://pypi.org/project/cmakestrap/"
   },
   "cppread": {
+    "filter": ["filter-cpp", "filter-library"],
     "date-end": "Nov 2024",
     "date-start": "Sep 2024",
     "name": "Simple Console Input Library with Built-in Parser",
@@ -127,6 +133,7 @@
     "url": "https://github.com/mrizaln/cppread"
   },
   "doublebuf": {
+    "filter": ["filter-cpp", "filter-library"],
     "date-end": "Jan 2025",
     "date-start": "Aug 2024",
     "name": "doublebuf - Lockless Double Buffering Library",
@@ -149,6 +156,7 @@
     "url": "https://github.com/mrizaln/doublebuf"
   },
   "dtl-modern": {
+    "filter": ["filter-cpp", "filter-library"],
     "date-end": "Dec 2024",
     "date-start": "Dec 2024",
     "name": "Arbitrary Sequence Diff Library",
@@ -171,6 +179,7 @@
     "url": "https://github.com/mrizaln/dtl-modern"
   },
   "game-of-life": {
+    "filter": ["filter-cpp", "filter-opengl"],
     "date-end": "Jan 2023",
     "date-start": "Mar 2022",
     "name": "Conway's Game of Life",
@@ -193,6 +202,7 @@
     "url": "https://github.com/mrizaln/game-of-life"
   },
   "glfw-cpp": {
+    "filter": ["filter-cpp", "filter-library"],
     "date-end": "Jan 2025",
     "date-start": "Apr 2024",
     "name": "GLFW RAII Wrapper for C++ (and more)",
@@ -219,6 +229,7 @@
     "url": "https://github.com/mrizaln/glfw-cpp"
   },
   "hangman": {
+    "filter": ["filter-cpp"],
     "date-end": "Dec 2024 (recently rewritten)",
     "date-start": "Jan 2022",
     "name": "Hangman",
@@ -239,6 +250,7 @@
     "url": "https://github.com/mrizaln/hangman"
   },
   "julia-set": {
+    "filter": ["filter-c", "filter-opengl"],
     "date-end": "May 2023",
     "date-start": "Jan 2023",
     "name": "Julia Set Renderer",
@@ -262,6 +274,7 @@
     "url": "https://github.com/mrizaln/julia-set"
   },
   "loxx": {
+    "filter": ["filter-rust"],
     "date-end": "Oct 2024",
     "date-start": "Sep 2024",
     "name": "Lox Programming Language Interpreter",
@@ -285,6 +298,7 @@
     "url": "https://github.com/mrizaln/loxx"
   },
   "mandelbrot-set": {
+    "filter": ["filter-cpp", "filter-opengl"],
     "date-end": "Jan 2023",
     "date-start": "Dec 2022",
     "name": "Mandelbrot Set Renderer",
@@ -307,6 +321,7 @@
     "url": "https://github.com/mrizaln/mandelbrot-set"
   },
   "opt-iter": {
+    "filter": ["filter-cpp", "filter-library"],
     "date-end": "Feb 2025",
     "date-start": "Mar 2025",
     "name": "Optional-based input iterator for C++",
@@ -327,6 +342,7 @@
     "url": "https://github.com/mrizaln/opt-iter"
   },
   "pong": {
+    "filter": ["filter-cpp", "filter-sfml"],
     "date-end": "Sep 2024",
     "date-start": "Apr 2024",
     "name": "Pong",
@@ -348,6 +364,7 @@
     "url": "https://github.com/mrizaln/pong-cpp2"
   },
   "qoipp": {
+    "filter": ["filter-cpp", "filter-library"],
     "date-end": "Jun 2024",
     "date-start": "May 2024",
     "name": "A Quite OK Image Format Codec in C++",
@@ -370,6 +387,7 @@
     "url": "https://github.com/mrizaln/qoipp"
   },
   "qoiview": {
+    "filter": ["filter-cpp", "filter-opengl"],
     "date-end": "Jan 2025",
     "date-start": "Jan 2025",
     "name": "QoiView - Simple qoi Image Viewer",
@@ -393,6 +411,7 @@
     "url": "https://github.com/mrizaln/qoiview"
   },
   "ray-tracing": {
+    "filter": ["filter-rust"],
     "date-end": "Apr 2024",
     "date-start": "Mar 2024",
     "name": "Ray Tracing",
@@ -414,6 +433,7 @@
     "url": "https://github.com/mrizaln/ray-tracing-rust"
   },
   "secret-string": {
+    "filter": ["filter-cpp", "filter-library"],
     "date-end": "Apr 2024",
     "date-start": "Apr 2024",
     "name": "secret-string - Compile-time String Literal Obfuscation Library",
@@ -436,6 +456,7 @@
     "url": "https://github.com/mrizaln/secret-string"
   },
   "simple-crud": {
+    "filter": ["filter-cpp"],
     "date-end": "Jan 2024",
     "date-start": "Jan 2024",
     "name": "Console-based CRUD Application",
@@ -458,6 +479,7 @@
     "url": "https://github.com/mrizaln/simple-crud"
   },
   "simple-ecs": {
+    "filter": ["filter-cpp", "filter-opengl"],
     "date-end": "Nov 2024",
     "date-start": "Nov 2024",
     "name": "Simple ECS",
@@ -479,6 +501,7 @@
     "url": "https://github.com/mrizaln/simple-ecs"
   },
   "sync-cpp": {
+    "filter": ["filter-cpp", "filter-library"],
     "date-end": "Jan 2025",
     "date-start": "Jan 2024",
     "name": "sync-cpp - Hassle-free Synchronized Container Library",

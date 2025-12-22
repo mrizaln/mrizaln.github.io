@@ -5,11 +5,10 @@ async function fillPortfolioItems() {
   let container = document.querySelector(".temp-portfolio-container");
   let template = document.querySelector(".temp-portfolio-item");
 
-  for (let [key, proj] of Object.entries(projDetails)) {
+  for (const [key, proj] of Object.entries(projDetails)) {
     let item = template.content.cloneNode(true).querySelector("div");
 
-    // add filter to proj-details
-    for (filter in proj["filter"]) {
+    for (const [_, filter] of Object.entries(proj["filter"])) {
       item.classList.add(filter);
     }
 
