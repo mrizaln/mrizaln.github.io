@@ -93,6 +93,45 @@ function animateSkills() {
   });
 }
 
+async function fillPortfolioItems() {
+  let projDetails = await fetch("assets/json/proj-details.json");
+  projDetails = await projDetails.json();
+
+  let container = document.querySelector(".temp-portfolio-container");
+  let template = document.querySelector(".temp-portfolio-item");
+
+  for (let [key, proj] of Object.entries(projDetails)) {
+    let item = template.content.cloneNode(true).querySelector("div");
+
+    // add filter to proj-details
+    for (filter in proj["filter"]) {
+      item.classList.add(filter);
+    }
+
+    let [img, info] = item.children[0].children;
+    let [title, detail, prev, link, desc] = info.children;
+
+    img.src = proj["preview-img-thumb"];
+
+    title.textContent = proj["name"];
+    detail.textContent = proj["name"];
+
+    prev.href = proj["preview-vid"] ?? proj["preview-img"];
+    prev.title = proj["name"];
+    prev.setAttribute(
+      "data-glightbox",
+      `title: ${proj["name"]}; description: .${key}-desc`,
+    );
+
+    link.href = `proj-details.html?proj=${key}`;
+
+    desc.classList.add(`${key}-desc`);
+    desc.children[0].href = `proj-details.html?proj=${key}`;
+
+    container.appendChild(item);
+  }
+}
+
 function initGlightbox() {
   const _glightbox = GLightbox({
     selector: ".glightbox",
@@ -107,7 +146,7 @@ function initIsotope() {
     let layout = isotopeItem.getAttribute("data-layout") ?? "masonry";
     let filter = isotopeItem.getAttribute("data-default-filter") ?? "*";
     let sort = isotopeItem.getAttribute("data-sort") ?? "original-order";
-    let container = isotopeItem.querySelector(".isotope-container")
+    let container = isotopeItem.querySelector(".isotope-container");
 
     new imagesLoaded(container, () => {
       let isotope = new Isotope(container, {
@@ -132,7 +171,7 @@ function initIsotope() {
           false,
         );
       });
-    })
+    });
   });
 }
 
@@ -207,12 +246,15 @@ function main() {
   initTypedJs();
   animateSkills();
   initSwiperSliders();
-  initGlightbox();
-  initIsotope();
 
   navmenuScrollspy();
   toggleScrollTop();
   correctScrollingPosition();
+
+  fillPortfolioItems().then(() => {
+    initGlightbox();
+    initIsotope();
+  })
 }
 
 main();
