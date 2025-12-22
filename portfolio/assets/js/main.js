@@ -107,29 +107,32 @@ function initIsotope() {
     let layout = isotopeItem.getAttribute("data-layout") ?? "masonry";
     let filter = isotopeItem.getAttribute("data-default-filter") ?? "*";
     let sort = isotopeItem.getAttribute("data-sort") ?? "original-order";
+    let container = isotopeItem.querySelector(".isotope-container")
 
-    let isotope = new Isotope(isotopeItem.querySelector(".isotope-container"), {
-      itemSelector: ".isotope-item",
-      layoutMode: layout,
-      filter: filter,
-      sortBy: sort,
-    });
+    new imagesLoaded(container, () => {
+      let isotope = new Isotope(container, {
+        itemSelector: ".isotope-item",
+        layoutMode: layout,
+        filter: filter,
+        sortBy: sort,
+      });
 
-    isotopeItem.querySelectorAll(".isotope-filters li").forEach((filters) => {
-      filters.addEventListener(
-        "click",
-        function () {
-          isotopeItem
-            .querySelector(".isotope-filters .filter-active")
-            .classList.remove("filter-active");
-          this.classList.add("filter-active");
-          isotope.arrange({
-            filter: this.getAttribute("data-filter"),
-          });
-        },
-        false,
-      );
-    });
+      isotopeItem.querySelectorAll(".isotope-filters li").forEach((filters) => {
+        filters.addEventListener(
+          "click",
+          function() {
+            isotopeItem
+              .querySelector(".isotope-filters .filter-active")
+              .classList.remove("filter-active");
+            this.classList.add("filter-active");
+            isotope.arrange({
+              filter: this.getAttribute("data-filter"),
+            });
+          },
+          false,
+        );
+      });
+    })
   });
 }
 
