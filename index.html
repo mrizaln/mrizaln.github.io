@@ -1,4 +1,4 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -9,51 +9,56 @@
       background-color: #2e3440;
       color: #e5e9f0;
     }
-    body main .things a, a:hover, a:visited, a:active {
-      color: #88c0d0;
-    }
-    body main .layout-outer {
-      display: table;
-      position: absolute;
-      top: 0;
-      left: 0;
-      height: 100%;
+    .wrapper {
+      min-height: 100vh;
       width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
-    body main .layout-inner {
-      display: table-cell;
-      vertical-align: middle;
-    }
-    body main .actual-content{
+    .wrapper > .content {
       margin-left: auto;
       margin-right: auto;
-      width: 400px;
     }
-    body .things li {
+    @media (orientation: portrait) {
+      .me {
+        min-width: 400px;
+        height: auto;
+        border-radius: 5%;
+      }
+    }
+    @media (orientation: landscape) {
+      .me {
+        width: 400px;
+        height: auto;
+        border-radius: 5%;
+      }
+    }
+    .name {
+      text-align: center;
+    }
+    .things a, a:hover, a:visited, a:active {
+      color: #88c0d0;
+    }
+    .things li {
       font-size: 1.5em;
       font-weight: bold;
-    }
-    body .me {
-      width: 400px;
-      height: 400px;
     }
   </style>
 </head>
 
 <body style="font-family: monospace">
   <main>
-    <div class="layout-outer">
-      <div class="layout-inner">
-        <div class="actual-content">
-          <img class="me" src="me-large.webp" alt="muhammad-rizal-nurromdhoni pic"/>
-          <h1 style="text-align:center">Muhammad Rizal Nurromdhoni</h1>
-          <ul class="things">
-            <li><a href="portfolio/index.html">Portfolio</a></li>
-            <li><a href="https://linkedin.com/in/muhammad-rizal-nurromdhoni/">LinkedIn</a></li>
-            <li><a href="https://github.com/mrizaln/">Github</a></li>
-            <li><a href="mailto:mrizaln2000@gmail.com">mail</a></li>
-          </ul>
-        </div>
+    <div class="wrapper">
+      <div class="content">
+        <img class="me" src="me-large.webp" alt="muhammad-rizal-nurromdhoni pic"/>
+        <h1 class="name">Muhammad Rizal Nurromdhoni</h1>
+        <ul class="things">
+          <li><a href="portfolio/index.html">Portfolio</a></li>
+          <li><a href="https://linkedin.com/in/muhammad-rizal-nurromdhoni/">LinkedIn</a></li>
+          <li><a href="https://github.com/mrizaln/">Github</a></li>
+          <li><a href="mailto:mrizaln2000@gmail.com">mail</a></li>
+        </ul>
       </div>
     </div>
   </main>
