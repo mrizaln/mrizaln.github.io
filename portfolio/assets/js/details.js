@@ -19,13 +19,13 @@ async function fillProjectDetails(proj) {
 
   const prev = document.querySelector(".temp-proj-prev");
 
-  name.textContent = proj["name"];
+  name.textContent = `${proj["name"]} - ${proj["summary-short"]}`;
   summary.innerHTML = proj["summary"];
 
   technologies.textContent = proj["technologies"].join(", ");
   techniques.textContent = proj["techniques"].join(", ");
 
-  date.textContent = `${proj["date-start"]} - ${proj["date-end"]}`;
+  date.textContent = `${proj["date-start"]}`;
   url.textContent = proj["url"];
   urlA.href = proj["url"];
   role.textContent = proj["role"].join(", ");

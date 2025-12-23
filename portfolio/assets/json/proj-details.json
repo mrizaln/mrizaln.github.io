@@ -2,7 +2,6 @@
   "aoc-vis": {
     "priority": 0,
     "filter": ["filter-cpp", "filter-sfml"],
-    "date-end": "Dec 2024",
     "date-start": "Dec 2024",
     "name": "aoc-vis",
     "preview-img": "assets/img/portfolio/aoc-vis.webp",
@@ -18,7 +17,6 @@
   "ascopet": {
     "priority": 2,
     "filter": ["filter-cpp", "filter-library"],
-    "date-end": "Apr 2025",
     "date-start": "Apr 2025",
     "name": "ascopet",
     "preview-img": "assets/img/portfolio/ascopet.webp",
@@ -34,7 +32,6 @@
   "calmind": {
     "priority": 1,
     "filter": ["filter-mobile"],
-    "date-end": "Jun 2023",
     "date-start": "May 2023",
     "name": "Calmind",
     "preview-img": "assets/img/portfolio/calmind.webp",
@@ -50,7 +47,6 @@
   "circbuf": {
     "priority": 2,
     "filter": ["filter-cpp", "filter-library"],
-    "date-end": "Jan 2025",
     "date-start": "Jun 2024",
     "name": "circbuf",
     "preview-img": "assets/img/portfolio/circbuf.webp",
@@ -66,7 +62,6 @@
   "cmakestrap": {
     "priority": 1,
     "filter": ["filter-python"],
-    "date-end": "Apr 2025",
     "date-start": "Apr 2025",
     "name": "cmakestrap",
     "preview-img": "assets/img/portfolio/cmakestrap.webp",
@@ -82,7 +77,6 @@
   "cppread": {
     "priority": 2,
     "filter": ["filter-cpp", "filter-library"],
-    "date-end": "Nov 2024",
     "date-start": "Sep 2024",
     "name": "cppread",
     "preview-img": "assets/img/portfolio/cppread.webp",
@@ -98,7 +92,6 @@
   "doublebuf": {
     "priority": 2,
     "filter": ["filter-cpp", "filter-library"],
-    "date-end": "Jan 2025",
     "date-start": "Aug 2024",
     "name": "doublebuf",
     "preview-img": "assets/img/portfolio/doublebuf.webp",
@@ -114,7 +107,6 @@
   "dtl-modern": {
     "priority": 2,
     "filter": ["filter-cpp", "filter-library"],
-    "date-end": "Dec 2024",
     "date-start": "Dec 2024",
     "name": "dtl-modern",
     "preview-img": "assets/img/portfolio/dtl-modern.webp",
@@ -130,7 +122,6 @@
   "game-of-life": {
     "priority": 0,
     "filter": ["filter-cpp", "filter-opengl"],
-    "date-end": "Jan 2023",
     "date-start": "Mar 2022",
     "name": "game-of-life",
     "preview-img": "assets/img/portfolio/game-of-life.webp",
@@ -146,7 +137,6 @@
   "glfw-cpp": {
     "priority": 2,
     "filter": ["filter-cpp", "filter-library"],
-    "date-end": "Jan 2025",
     "date-start": "Apr 2024",
     "name": "glfw-cpp",
     "preview-img": "assets/img/portfolio/glfw-cpp.webp",
@@ -162,7 +152,6 @@
   "hangman": {
     "priority": 1,
     "filter": ["filter-cpp"],
-    "date-end": "Dec 2024 (recently rewritten)",
     "date-start": "Jan 2022",
     "name": "Hangman",
     "preview-img": "assets/img/portfolio/hangman.webp",
@@ -178,7 +167,6 @@
   "julia-set": {
     "priority": 0,
     "filter": ["filter-c", "filter-opengl"],
-    "date-end": "May 2023",
     "date-start": "Jan 2023",
     "name": "julia-set",
     "preview-img": "assets/img/portfolio/julia-set.webp",
@@ -194,7 +182,6 @@
   "loxx": {
     "priority": 1,
     "filter": ["filter-rust"],
-    "date-end": "Oct 2024",
     "date-start": "Sep 2024",
     "name": "loxx",
     "preview-img": "assets/img/portfolio/loxx.webp",
@@ -210,7 +197,6 @@
   "mandelbrot-set": {
     "priority": 0,
     "filter": ["filter-cpp", "filter-opengl"],
-    "date-end": "Jan 2023",
     "date-start": "Dec 2022",
     "name": "mandelbrot-set",
     "preview-img": "assets/img/portfolio/mandelbrot-set.webp",
@@ -226,7 +212,6 @@
   "opt-iter": {
     "priority": 2,
     "filter": ["filter-cpp", "filter-library"],
-    "date-end": "Feb 2025",
     "date-start": "Mar 2025",
     "name": "opt-iter",
     "preview-img": "assets/img/portfolio/opt-iter.webp",
@@ -242,7 +227,6 @@
   "pong": {
     "priority": 0,
     "filter": ["filter-cpp", "filter-sfml"],
-    "date-end": "Sep 2024",
     "date-start": "Apr 2024",
     "name": "Pong",
     "preview-img": "assets/img/portfolio/pong.webp",
@@ -258,7 +242,6 @@
   "qoipp": {
     "priority": 2,
     "filter": ["filter-cpp", "filter-library"],
-    "date-end": "Jun 2024",
     "date-start": "May 2024",
     "name": "qoipp",
     "preview-img": "assets/img/portfolio/qoipp.webp",
@@ -274,7 +257,6 @@
   "qoiview": {
     "priority": 0,
     "filter": ["filter-cpp", "filter-opengl"],
-    "date-end": "Jan 2025",
     "date-start": "Jan 2025",
     "name": "QoiView",
     "preview-img": "assets/img/portfolio/qoipp.webp",
@@ -290,7 +272,6 @@
   "ray-tracing": {
     "priority": 1,
     "filter": ["filter-rust"],
-    "date-end": "Apr 2024",
     "date-start": "Mar 2024",
     "name": "Ray Tracing",
     "preview-img": "assets/img/portfolio/ray-tracing.webp",
@@ -306,7 +287,6 @@
   "secret-string": {
     "priority": 2,
     "filter": ["filter-cpp", "filter-library"],
-    "date-end": "Apr 2024",
     "date-start": "Apr 2024",
     "name": "secret-string",
     "preview-img": "assets/img/portfolio/secret-string.webp",
@@ -322,7 +302,6 @@
   "simple-crud": {
     "priority": 1,
     "filter": ["filter-cpp"],
-    "date-end": "Jan 2024",
     "date-start": "Jan 2024",
     "name": "simple-crud",
     "preview-img": "assets/img/portfolio/simple-crud.webp",
@@ -338,9 +317,8 @@
   "simple-ecs": {
     "priority": 0,
     "filter": ["filter-cpp", "filter-opengl"],
-    "date-end": "Nov 2024",
     "date-start": "Nov 2024",
-    "name": "Simple ECS",
+    "name": "simple-ecs",
     "preview-img": "assets/img/portfolio/simple-ecs.webp",
     "preview-img-thumb": "assets/img/portfolio/simple-ecs.thumb.webp",
     "preview-vid": "assets/vid/portfolio/simple-ecs.webm",
@@ -354,7 +332,6 @@
   "sync-cpp": {
     "priority": 2,
     "filter": ["filter-cpp", "filter-library"],
-    "date-end": "Jan 2025",
     "date-start": "Jan 2024",
     "name": "sync-cpp",
     "preview-img": "assets/img/portfolio/sync-cpp.webp",
