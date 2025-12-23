@@ -3,6 +3,7 @@
 
 <head>
   <title>Muhammad Rizal Nurromdhoni Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
     body {
       font-family: monospace;
@@ -20,44 +21,41 @@
       margin-left: auto;
       margin-right: auto;
     }
-    @media (orientation: portrait) {
-      .me {
-        min-width: 400px;
-        height: auto;
-        border-radius: 5%;
-      }
+    .me {
+      width: calc(min(400px, 100vw) - 20px);
+      padding: 0 10px;
+      align-items: center;
     }
-    @media (orientation: landscape) {
-      .me {
-        width: 400px;
-        height: auto;
-        border-radius: 5%;
-      }
+    .me > img {
+      max-width: 100%;
+      border-radius: 5%;
     }
     .name {
       text-align: center;
     }
-    .things a, a:hover, a:visited, a:active {
+    .links a, a:hover, a:visited, a:active {
       color: #88c0d0;
     }
-    .things li {
-      font-size: 1.5em;
+    .links li {
+      font-size: 1.35em;
       font-weight: bold;
     }
   </style>
 </head>
 
-<body style="font-family: monospace">
+<body >
   <main>
     <div class="wrapper">
       <div class="content">
-        <img class="me" src="me-large.webp" alt="muhammad-rizal-nurromdhoni pic"/>
-        <h1 class="name">Muhammad Rizal Nurromdhoni</h1>
-        <ul class="things">
+        <div class="me">
+          <img src="me-large.webp" alt="muhammad-rizal-nurromdhoni pic"/>
+          <h1 class="name">Muhammad Rizal Nurromdhoni</h1>
+        </div>
+        <ul class="links">
           <li><a href="portfolio/index.html">Portfolio</a></li>
           <li><a href="https://linkedin.com/in/muhammad-rizal-nurromdhoni/">LinkedIn</a></li>
           <li><a href="https://github.com/mrizaln/">Github</a></li>
-          <li><a href="mailto:mrizaln2000@gmail.com">mail</a></li>
+          <li><a href="mailto:mrizaln2000@gmail.com">Email</a></li>
         </ul>
       </div>
     </div>
