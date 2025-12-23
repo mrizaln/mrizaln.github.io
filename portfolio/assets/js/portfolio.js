@@ -1,11 +1,13 @@
 async function fillPortfolioItems() {
   let projDetails = await fetch("assets/json/proj-details.json");
   projDetails = await projDetails.json();
+  projDetails = Object.entries(projDetails);
+  projDetails.sort((a, b) => a[1].priority - b[1].priority);
 
   let container = document.querySelector(".temp-portfolio-container");
   let template = document.querySelector(".temp-portfolio-item");
 
-  for (const [key, proj] of Object.entries(projDetails)) {
+  for (const [key, proj] of projDetails) {
     let item = template.content.cloneNode(true).querySelector("div");
 
     for (const [_, filter] of Object.entries(proj["filter"])) {
@@ -18,13 +20,13 @@ async function fillPortfolioItems() {
     img.src = proj["preview-img-thumb"];
 
     title.textContent = proj["name"];
-    detail.textContent = proj["name"];
+    detail.textContent = proj["summary-short"];
 
     prev.href = proj["preview-vid"] ?? proj["preview-img"];
     prev.title = proj["name"];
     prev.setAttribute(
       "data-glightbox",
-      `title: ${proj["name"]}; description: .${key}-desc`,
+      `title: ${proj["summary-short"]}; description: .${key}-desc`,
     );
 
     link.href = `proj-details.html?proj=${key}`;
