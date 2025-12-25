@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="EN-us">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <style>
+      body {
+        margin: 0;
+        background-color: #000;
+        overflow: hidden;
+      }
+      .emscripten {
+        position: absolute;
+        top: 0;
+        left: 0;
+        margin: 0;
+        border: 0;
+        overflow: hidden;
+        display: block;
+      }
+      #canvas:focus {
+        outline: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas
+      class="emscripten"
+      id="canvas"
+      oncontextmenu="event.preventDefault()"
+    ></canvas>
+    <script>
+      var Module = {
+        arguments: [
+          "-c", "5", "350",
+          "-i", "0.42",
+          "-b", "220", "1", "1", "30",
+          "-b", "310", "1", "1", "50",
+        ],
+        preRun: [],
+      };
+      Module.preRun.push(function () {
+        addRunDependency("idbfs-syncfs"),
+          FS.mkdir("/offline"),
+          FS.mount(IDBFS, {}, "/offline"),
+          FS.syncfs(!0, function (n) {
+            if (n) throw n;
+            removeRunDependency("idbfs-syncfs"), console.log("IDBFS Synced");
+          });
+      });
+    </script>
+    <script async src="index.js"></script>
+  </body>
+</html>
