@@ -1,54 +1,154 @@
 <!doctype html>
 <html lang="EN-us">
-  <head>
-    <meta charset="utf-8" />
-    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
-    <style>
-      body {
-        margin: 0;
-        background-color: #000;
-        overflow: hidden;
-      }
-      .emscripten {
-        position: absolute;
-        top: 0;
-        left: 0;
-        margin: 0;
-        border: 0;
-        overflow: hidden;
-        display: block;
-      }
-      #canvas:focus {
-        outline: 0;
-      }
-    </style>
-  </head>
-  <body>
-    <canvas
-      class="emscripten"
-      id="canvas"
-      oncontextmenu="event.preventDefault()"
-    ></canvas>
-    <script>
-      var Module = {
-        arguments: [
-          "-c", "5", "350",
-          "-i", "0.42",
-          "-b", "220", "1", "1", "30",
-          "-b", "310", "1", "1", "50",
-        ],
-        preRun: [],
-      };
-      Module.preRun.push(function () {
-        addRunDependency("idbfs-syncfs"),
-          FS.mkdir("/offline"),
-          FS.mount(IDBFS, {}, "/offline"),
-          FS.syncfs(!0, function (n) {
-            if (n) throw n;
-            removeRunDependency("idbfs-syncfs"), console.log("IDBFS Synced");
-          });
-      });
-    </script>
-    <script async src="index.js"></script>
-  </body>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      margin: 0;
+      background-color: #2e3440;
+      color: #e5e9f0;
+      overflow: hidden;
+      font-family: monospace;
+    }
+    .emscripten {
+      position: absolute;
+      top: 0;
+      left: 0;
+      margin: 0;
+      border: 0;
+      overflow: hidden;
+      display: block;
+    }
+    #canvas:focus {
+      width: 100%;
+      height: 100%;
+      outline: none;
+    }
+    .wrapper {
+      min-height: 100vh;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .wrapper > .loader {
+      border: 12px solid #434c5e;
+      border-top: 12px solid #149ddd;
+      border-radius: 50%;
+      width: calc(min(75px, 100vmin));
+      aspect-ratio: 1 / 1;
+      animation: spin 2s linear infinite;
+    }
+    .wrapper p {
+      font-size: 24px;
+      font-weight: bold;
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    .progress {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background-color: #434c5e;
+    }
+    .progress > .bar {
+      width: 4%;
+      height: 12px;
+      background-color: #149ddd;
+    }
+  </style>
+</head>
+
+<body>
+<canvas class="emscripten" id="canvas" oncontextmenu="event.preventDefault()"></canvas>
+
+<div class="wrapper" id="loader">
+  <div class="loader"></div>
+  <p>Loading wasm... <span class="percent">0%</span><p>
+</div>
+
+<div class="progress" id="progress">
+  <div class="bar"></div>
+</div>
+
+<script>
+  var Module = {
+    arguments: [
+      "-c", "5", "350",
+      "-i", "0.41",
+      "-b", "220", "1", "1", "30",
+      "-b", "310", "1", "1", "50",
+      "-W", `${window.innerWidth}`,
+      "-H", `${window.innerHeight}`,
+    ],
+    preRun: [],
+  }
+
+  Module["preRun"].push(function() {
+    addRunDependency("idbfs-syncfs")
+
+    FS.mkdir("/offline")
+    FS.mount(IDBFS, {}, "/offline")
+    FS.syncfs(true, function(err) {
+      if (err) throw err
+      console.log("IDBFS Synced")
+      removeRunDependency("idbfs-syncfs")
+    })
+  })
+
+  Module["onRuntimeInitialized"] = function() {
+    console.log("Finished initializing wasm")
+    document.getElementById("loader").style.display = "none"
+    document.getElementById("progress").style.display = "none"
+  }
+
+  async function downloadAndReport(response) {
+    const progress1 = document.querySelector("#progress .bar")
+    const progress2 = document.querySelector("#loader .percent")
+
+    const contentLen = response.headers.get("content-length")
+    const total = parseInt(contentLen, 10)
+    const chunks = []
+    let received = 0
+
+    const reader = response.body.getReader()
+    while (true) {
+      const { done, value } = await reader.read()
+      if (done) break
+      chunks.push(value)
+      received += value.byteLength
+
+      // received length might be larger with gzip encoding, so just clamp to 100%
+      const text = Math.min(100, (100 * received / total)).toFixed(2) + "%"
+
+      progress1.style.width = text
+      progress2.textContent = text
+    }
+
+    const bytes = new Uint8Array(received)
+    let pos = 0
+    for (let chunk of chunks) {
+      bytes.set(chunk, pos)
+      pos += chunk.byteLength
+    }
+
+    return bytes
+  }
+
+  Module['instantiateWasm'] = function(imports, successCallback) {
+    fetch("index.wasm")
+      .then(response => downloadAndReport(response))
+      .then(buffer => WebAssembly.instantiate(buffer, imports))
+      .then(moduleAndInstance => successCallback(moduleAndInstance.instance))
+      .catch(error => console.error("Error fetching or instantiating Wasm module:", error))
+    return {}
+  }
+</script>
+<script async type="text/javascript" src="index.js"></script>
+</body>
 </html>
