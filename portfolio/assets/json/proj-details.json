@@ -61,7 +61,7 @@
   },
   "cmakestrap": {
     "priority": 1,
-    "filter": ["filter-python"],
+    "filter": ["filter-python", "filter-feat"],
     "date-start": "Apr 2025",
     "name": "cmakestrap",
     "preview-img": "assets/img/portfolio/cmakestrap.webp",
@@ -121,7 +121,7 @@
   },
   "game-of-life": {
     "priority": 0,
-    "filter": ["filter-cpp", "filter-opengl"],
+    "filter": ["filter-cpp", "filter-opengl", "filter-feat"],
     "date-start": "Mar 2022",
     "name": "game-of-life",
     "preview-img": "assets/img/portfolio/game-of-life.webp",
@@ -166,7 +166,7 @@
   },
   "julia-set": {
     "priority": 0,
-    "filter": ["filter-c", "filter-opengl"],
+    "filter": ["filter-c", "filter-opengl", "filter-feat"],
     "date-start": "Jan 2023",
     "name": "julia-set",
     "preview-img": "assets/img/portfolio/julia-set.webp",
@@ -196,7 +196,7 @@
   },
   "mandelbrot-set": {
     "priority": 0,
-    "filter": ["filter-cpp", "filter-opengl"],
+    "filter": ["filter-cpp", "filter-opengl", "filter-feat"],
     "date-start": "Dec 2022",
     "name": "mandelbrot-set",
     "preview-img": "assets/img/portfolio/mandelbrot-set.webp",
@@ -226,7 +226,7 @@
   },
   "pong": {
     "priority": 0,
-    "filter": ["filter-cpp", "filter-sfml"],
+    "filter": ["filter-cpp", "filter-sfml", "filter-feat"],
     "date-start": "Apr 2024",
     "name": "Pong",
     "preview-img": "assets/img/portfolio/pong.webp",
@@ -256,11 +256,11 @@
   },
   "qoiview": {
     "priority": 0,
-    "filter": ["filter-cpp", "filter-opengl"],
+    "filter": ["filter-cpp", "filter-opengl", "filter-feat"],
     "date-start": "Jan 2025",
     "name": "QoiView",
-    "preview-img": "assets/img/portfolio/qoipp.webp",
-    "preview-img-thumb": "assets/img/portfolio/qoipp.thumb.webp",
+    "preview-img": "assets/img/portfolio/qoiview.webp",
+    "preview-img-thumb": "assets/img/portfolio/qoiview.thumb.webp",
     "preview-vid": "assets/vid/portfolio/qoiview.webm",
     "role": ["Author"],
     "summary-short": "Simple and minimal qoi image viewer",
@@ -271,7 +271,7 @@
   },
   "ray-tracing": {
     "priority": 1,
-    "filter": ["filter-rust"],
+    "filter": ["filter-rust", "filter-feat"],
     "date-start": "Mar 2024",
     "name": "Ray Tracing",
     "preview-img": "assets/img/portfolio/ray-tracing.webp",
@@ -316,7 +316,7 @@
   },
   "simple-ecs": {
     "priority": 0,
-    "filter": ["filter-cpp", "filter-opengl"],
+    "filter": ["filter-cpp", "filter-opengl", "filter-feat"],
     "date-start": "Nov 2024",
     "name": "simple-ecs",
     "preview-img": "assets/img/portfolio/simple-ecs.webp",
@@ -346,7 +346,7 @@
   },
   "traffic-model": {
     "priority": -1,
-    "filter": ["filter-cpp", "filter-opengl"],
+    "filter": ["filter-cpp", "filter-opengl", "filter-feat"],
     "date-start": "Sep 2022",
     "name": "traffic-model",
     "preview-img": "assets/img/portfolio/traffic-model.webp",
