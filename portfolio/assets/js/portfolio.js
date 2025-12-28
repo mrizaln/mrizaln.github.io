@@ -15,7 +15,7 @@ async function fillPortfolioItems() {
     }
 
     let [img, info] = item.children[0].children;
-    let [title, detail, prev, link, desc] = info.children;
+    let [title, detail, prev, link] = info.children;
 
     img.src = proj["preview-img-thumb"];
 
@@ -26,20 +26,18 @@ async function fillPortfolioItems() {
     prev.title = proj["name"];
     prev.setAttribute(
       "data-glightbox",
-      `title: ${proj["summary-short"]}; description: .${key}-desc`,
+      `title: ${proj["summary-short"]}; description: <a href='proj-details.html?proj=${key}'>More Details</a>`,
     );
 
     link.href = `proj-details.html?proj=${key}`;
-
-    desc.classList.add(`${key}-desc`);
-    desc.children[0].href = `proj-details.html?proj=${key}`;
 
     container.appendChild(item);
   }
 }
 
 function initGlightbox() {
-  const _glightbox = GLightbox({
+  // stick it into window to make it accessible everywhere
+  window.glightbox = GLightbox({
     selector: ".glightbox",
   });
 }
@@ -62,7 +60,7 @@ function initIsotope() {
       isotopeItem.querySelectorAll(".isotope-filters li").forEach((filters) => {
         filters.addEventListener(
           "click",
-          function () {
+          function() {
             isotopeItem
               .querySelector(".isotope-filters .filter-active")
               .classList.remove("filter-active");
