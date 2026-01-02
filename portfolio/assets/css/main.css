@@ -1206,13 +1206,33 @@ section,
 .portfolio-details .portfolio-description h2 {
   font-size: 26px;
   font-weight: 700;
+}
+
+.portfolio-details .portfolio-description h3 {
+  text-align: right;
+  font-size: 20px;
+  font-style: italic;
   margin-bottom: 20px;
+  padding-bottom: 20px;
+  color: color-mix(in srgb, var(--default-color), transparent 25%);
+  border-bottom: 1px solid color-mix(in srgb, var(--default-color), transparent 85%);
 }
 
 .portfolio-details .portfolio-description p {
   padding: 0;
-  color: color-mix(in srgb, var(--default-color), transparent 30%);
+  margin-top: 2em;
 }
+
+.portfolio-details .portfolio-description {
+  background-color: var(--surface-color);
+  color: color-mix(in srgb, var(--default-color), transparent 10%);
+  padding: 1em 2em;
+}
+
+.portfolio-details .portfolio-info {
+  background-color: var(--surface-color);
+}
+
 
 /*--------------------------------------------------------------
 # Service Details Section

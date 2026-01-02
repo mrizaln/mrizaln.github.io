@@ -6,7 +6,8 @@ async function getQueryParam(param) {
 
 async function fillProjectDetails(proj) {
   const desc = document.querySelector(".portfolio-description");
-  let name = desc.querySelector(".temp-proj-name");
+  let title = desc.querySelector(".temp-proj-title");
+  let subtitle = desc.querySelector(".temp-proj-subtitle");
   let summary = desc.querySelector(".temp-proj-summary");
 
   const info = document.querySelector(".portfolio-info");
@@ -19,7 +20,8 @@ async function fillProjectDetails(proj) {
 
   const prev = document.querySelector(".temp-proj-prev");
 
-  name.textContent = `${proj["name"]} - ${proj["summary-short"]}`;
+  title.textContent = proj["name"];
+  subtitle.textContent = proj["summary-short"];
   summary.innerHTML = proj["summary"];
 
   technologies.textContent = proj["technologies"].join(", ");
