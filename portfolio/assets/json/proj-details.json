@@ -86,7 +86,7 @@
     "summary-short": "Simple console input library with built-in parser",
     "summary": "<p>Out of frustration of the C++ i/o system, I decided to create a simple library that allows me to read input from the console easily. The library also has a built-in parser that can parse the input into a specific type (int, float, string, etc) or you can create your own parser to parse the input into a custom type or override an existing parser for a type. The main feature of the library aside from the custom parsing is that it allows for easy input for multiple values (for example, for birth date input in 'y/m/d' format).</p>",
     "techniques": ["API design", "Parsing"],
-    "technologies": ["C++", "i/o"],
+    "technologies": ["C++", "I/O"],
     "url": "https://github.com/mrizaln/cppread"
   },
   "doublebuf": {
@@ -193,6 +193,21 @@
     "techniques": ["Lexing", "Parsing", "Interpreting"],
     "technologies": ["Rust", "Lox", "Interpreter"],
     "url": "https://github.com/mrizaln/loxx"
+  },
+  "madbfs": {
+    "priority": -1,
+    "filter": ["filter-cpp", "filter-feat"],
+    "date-start": "Feb 2025",
+    "name": "madbfs",
+    "preview-img": "assets/img/portfolio/madbfs.webp",
+    "preview-img-thumb": "assets/img/portfolio/madbfs.thumb.webp",
+    "preview-vid": null,
+    "role": ["Author"],
+    "summary-short": "Userspace filesystem for Android via adb using FUSE",
+    "summary": "<p>madbfs (Modern adb Filesystem, formerly adbfsm) is a userspace filesystem for Android via adb built using libfuse. It focuses on being fast, reliable, and safe, with straightforward, well-structured code that follows modern C++ practices.</p><p>I want to manage my Android phone storage from my computer without using MTP (it's awful).</p><p>This project is inspired by the <a href='https://github.com/spion/adbfs-rootless'>adbfs-rootless</a> project. While adbfs-rootless works most of the time under light load it has reliability issues. Under high load (such as when a thumbnailer service is running) adbfs-rootless tends to crash, making it unusable until it is forcefully unmounted and its cache cleaned.</p><p>The file I/O approach of adbfs-rootless is also similar to that of MTP, in which each file is first pulled from device (using adb pull) before any operations like reading and writing performed. If a write operation is performed, the file is then pushed back into the device (using adb push). This approach limits the size of the file that can be handled before the cache is filled (it uses /tmp).</p>",
+    "techniques": ["Filesystem", "Asynchrony", "Serialization", "Caching", "Logging", "RPC design", "Cross-compilation", "IPC"],
+    "technologies": ["C++", "Coroutines", "FUSE", "adb", "TCP", "Unix socket", "Android"],
+    "url": "https://github.com/mrizaln/madbfs"
   },
   "mandelbrot-set": {
     "priority": 0,
@@ -356,7 +371,7 @@
     "summary-short": "Agent-based traffic model",
     "summary": "<p>To complete my undergraduate study I have to complete final project with an undergraduate thesis as the final result. This agent-based traffic model is the final project I've decided to do (you can look up my thesis <a href='http://repository.ipb.ac.id/handle/123456789/171692'>here</a>).</p><p>The main inspiration for this project is a paper made by Sugihakim and Alatas in 2015 (<a href='https://doi.org/10.1016/j.physleta.2015.09.048'>doi</a>). In it, Sugihakim and Alatas used agent-based modeling to simulate the dynamics of traffic. There are two important elements to the model, the first is the road as the system in which the simulation will be performed and analyized, and the second is vechicle as the agent that lived in the system. The dynamics is defined by the interaction between these agents living in the system. The author only defined the a few interaction rule between them but it successfully exhibit a convincing traffic dynamic. However, there is one major point that is limitation that this model have, the model only simulate a system with static number of agents. There is no new agents entering the system or leaving the system.</p><p>The model I've created consists of the same system and agents with the addition of new agents able to enter/exit the system and the addition of bottleneck. The former allows the model to simulate better an actual road segment while the latter tries to <i>trigger</i> traffic congestion. I collected various data about the traffic on the road segment and then the data is compared to <a href='https://en.wikipedia.org/wiki/Three-phase_traffic_theory'>Three-Phase Traffic Theory</a>, a theoretical traffic modeling based on real-world data by Boris Kerner.</p><p>At the time, when I was still deciding what project to tackle I was learning C++ and OpenGL. So, I decided why not just use C++ to write the simulation and OpenGL as the rendering system. It was a very major undertaking to say the least. But I managed to complete it and able to work the project completely. If you are interested, you could try seeing the simulation in action <a href='https://mrizaln.github.io/projects/traffic-model/index.html'><b>here</b></a> (or you could press the project URL link above).</p><p>There many challenges I have encountered in this endeavour. The obvious one is C++ language itself and OpenGL, I learned them previously but not to the very deep level of understanding. I am learning both at the same time I write the core program. The next challenge is how to get data from the simulation in which I opted to using TCP to solve this. While the simulation is running it also collects data and then acts as server in which multiple TCP clients can connect to it and receive the simulation data in real-time. This implementation requires serialization of course: I used Newline-delimited JSON as the format which is stream friendly. The other challenge I encountered is splitting simulation logic/loop from the rendering logic which requires even more techniques. I learned about multithreading, synchronization using mutex, lockless programming, double buffering, etc.</p><p>Also, while I'm carrying out this project, I also have created many other projects that I used as dependencies of this project: <ul><li>sync-cpp: a very simple synchronizated wrapper (similar to Rust's Mutex)</li><li>glfw-cpp: RAII-based GLFW wrapper with multithreading in mind</li><li>circbuf: Circular buffer implementation</li><li>doublebuf: Lock-free double buffering mechanism</li><li>ascopet: Asynchronous scope time tracing library</li></ul></p>",
     "techniques": ["Real-time simulation", "Multithreading", "Serialization"],
-    "technologies": ["C++", "SFML"],
+    "technologies": ["C++", "OpenGL", "GLFW", "TCP"],
     "url": "https://mrizaln.github.io/projects/traffic-model/index.html"
   }
 }
