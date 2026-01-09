@@ -1195,8 +1195,9 @@ section,
   font-size: 15px;
 }
 
-.portfolio-details .portfolio-info ul li+li {
+.portfolio-details .portfolio-info ul li {
   margin-top: 10px;
+  font-size: 1em;
 }
 
 .portfolio-details .portfolio-description {
@@ -1221,6 +1222,7 @@ section,
 .portfolio-details .portfolio-description p {
   padding: 0;
   margin-top: 2em;
+  font-size: 15px;
 }
 
 .portfolio-details .portfolio-description {
