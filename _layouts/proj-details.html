@@ -38,11 +38,11 @@
   <header id="header" class="header dark-background d-flex flex-column">
     <i class="header-toggle d-xl-none bi bi-list"></i>
 
-    <a href="index.html" class="profile-img">
+    <a href="../portfolio.html" class="profile-img">
       <img src="../assets/img/me-small.webp" alt="" class="img-fluid rounded-circle">
     </a>
 
-    <a href="index.html" class="logo d-flex align-items-center justify-content-center">
+    <a href="../portfolio.html" class="logo d-flex align-items-center justify-content-center">
       <h1 class="sitename text-center">Muhammad Rizal Nurromdhoni</h1>
     </a>
 
@@ -54,12 +54,12 @@
 
     <nav id="navmenu" class="navmenu">
       <ul>
-        <li><a href="index.html#hero"><i class="bi bi-house navicon"></i>Home</a></li>
-        <li><a href="index.html#about"><i class="bi bi-person navicon"></i> About</a></li>
-        <li><a href="index.html#skills"><i class="bi bi-list-stars navicon"></i> Skills</a></li>
-        <li><a href="index.html#resume"><i class="bi bi-file-earmark-text navicon"></i> Resume</a></li>
-        <li><a href="index.html#portfolio"><i class="bi bi-images navicon"></i> Portfolio</a></li>
-        <li><a href="index.html#contact"><i class="bi bi-envelope navicon"></i> Contact</a></li>
+        <li><a href="../portfolio.html#hero"><i class="bi bi-house navicon"></i>Home</a></li>
+        <li><a href="../portfolio.html#about"><i class="bi bi-person navicon"></i> About</a></li>
+        <li><a href="../portfolio.html#skills"><i class="bi bi-list-stars navicon"></i> Skills</a></li>
+        <li><a href="../portfolio.html#resume"><i class="bi bi-file-earmark-text navicon"></i> Resume</a></li>
+        <li><a href="../portfolio.html#portfolio"><i class="bi bi-images navicon"></i> Portfolio</a></li>
+        <li><a href="../portfolio.html#contact"><i class="bi bi-envelope navicon"></i> Contact</a></li>
       </ul>
     </nav>
 
@@ -73,7 +73,7 @@
         <h1 class="mb-2 mb-lg-0">Portfolio Details</h1>
         <nav class="breadcrumbs">
           <ol>
-            <li><a href="index.html">Home</a></li>
+            <li><a href="../portfolio.html">Home</a></li>
             <li class="current">Portfolio Details</li>
           </ol>
         </nav>
@@ -87,35 +87,35 @@
 
         <div class="row gy-4">
 
+          {% assign project = site.data.proj_details | where: "name", page.slug | first %}
+
           <div class="col-lg-8 temp-proj-prev">
-            <!-- will be filled by javascript using one of template below -->
+          {% if project.preview_vid %}
+            <video controls loop="true" style="width:100%">
+              <source src="{{ project.preview_vid }}" type="video/{{ project.preview_vid | split: '.' | last }}">
+            </video>
+          {% else %}
+            <img style="width:100%" src="{{ project.preview_img }}">
+          {% endif %}
           </div>
-
-          <template class="temp-proj-prev-vid">
-            <video controls loop="true" style="width:100%"></video>
-          </template>
-
-          <template class="temp-proj-prev-img">
-            <img style="width:100%"/>
-          </template>
 
           <div class="col-lg-4">
             <div class="portfolio-info">
               <h3>Project information</h3>
               <ul>
-                <li><strong>Technologies</strong>: <span class="temp-proj-technologies"></span></li>
-                <li><strong>Techniques</strong>: <span class="temp-proj-techniques"></span></li>
-                <li><strong>Project start</strong>: <span class="temp-proj-date"></span></li>
-                <li><strong>Project URL</strong>: <a class="temp-proj-url-a"><span class="temp-proj-url"></span></a></li>
-                <li><strong>Role</strong>: <span class="temp-proj-role"></span></li>
+                <li><strong>Technologies</strong>: {{ project.technologies | join: ', ' }}</li>
+                <li><strong>Techniques</strong>: {{ project.techniques | join: ', ' }}</li>
+                <li><strong>Project start</strong>: {{ project.date_start }}</li>
+                <li><strong>Project URL</strong>: <a href="{{ project.url }}">{{ project.url }}</a></li>
+                <li><strong>Role</strong>: {{ project.role }}</li>
               </ul>
             </div>
           </div>
 
           <div class="portfolio-description">
-            <h2 class="temp-proj-title"></h2>
-            <h3 class="temp-proj-subtitle"></h3>
-            <div class="temp-proj-summary" style="text-align: justify; text-indent: 3em"></div>
+            <h2>{{ project.name }}</h2>
+            <h3>{{ project.summary_short }}</h3>
+            <div style="text-align: justify; text-indent: 3em">{{ content }}</div>
           </div>
 
         </div>
@@ -154,7 +154,6 @@
 
   <!-- Main JS File -->
   <script src="../assets/js/main.js"></script>
-  <script src="../assets/js/details.js"></script>
 
 </body>
 

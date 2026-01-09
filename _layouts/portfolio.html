@@ -9,7 +9,7 @@
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="../assets/img/favicon.svg" rel="icon">
+  <link href="assets/img/favicon.svg" rel="icon">
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,12 +17,12 @@
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
-  <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="../assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
 
   <!-- Main CSS File -->
-  <link href="../assets/css/main.css" rel="stylesheet">
+  <link href="assets/css/main.css" rel="stylesheet">
 
   <!-- =======================================================
   * Template Name: iPortfolio
@@ -39,7 +39,7 @@
     <i class="header-toggle d-xl-none bi bi-list"></i>
 
     <a href="#" class="profile-img">
-      <img src="../assets/img/me-medium.webp" alt="" class="img-fluid rounded-circle">
+      <img src="assets/img/me-medium.webp" alt="" class="img-fluid rounded-circle">
     </a>
 
     <a href="#" class="logo d-flex align-items-center justify-content-center">
@@ -70,7 +70,7 @@
     <!-- Hero Section -->
     <section id="hero" class="hero section dark-background">
 
-      <img src="../assets/img/hero-bg.webp" alt="">
+      <img src="assets/img/hero-bg.webp" alt="">
 
       <div class="container">
         <h2>Muhammad Rizal Nurromdhoni</h2>
@@ -93,7 +93,7 @@
       <div class="container">
         <div class="row gy-4 justify-content-center">
           <div class="col-lg-4">
-            <img src="../assets/img/me-medium.webp" class="img-fluid rounded-4" alt="Muhammad Rizal Nurromdhoni picture">
+            <img src="assets/img/me-medium.webp" class="img-fluid rounded-4" alt="Muhammad Rizal Nurromdhoni picture">
           </div>
           <div class="col-lg-8 content">
             <h2>C++/Rust Developer | Graphics Programmer | Mobile Developer</h2>
@@ -222,7 +222,7 @@
 
             <div class="resume-item">
               <h4>Bachelor of Science</h4>
-              <h5>2019 - 2025</h5>
+              <h5>2025</h5>
               <p><em>Institut Pertanian Bogor, Bogor, Indonesia</em></p>
               <p>Major in Physics; Minor in Electrical Instrumentation</p>
             </div><!-- Edn Resume Item -->
@@ -232,7 +232,7 @@
             <div class="resume-item">
               <h4>Bangkit 2023 (Android Learning Path Cohort)</h4>
               <h5>2023</h5>
-              <p><em>Online</em></p>
+              <p><em>Online (diinisiasi oleh Google, GoTo, Tokopedia, dan Traveloka)</em></p>
               <p>Learned Android Development from the fundamental to the advanced topic including Jetpack Compose</p>
             </div><!-- Edn Resume Item -->
 
@@ -247,12 +247,12 @@
 
           </div>
 
-          <div class="col-lg-6">
-            <h3 class="resume-title">Professional Experience</h3>
+          <!-- <div class="col-lg-6"> -->
+          <!--   <h3 class="resume-title">Professional Experience</h3> -->
 
-            <p><em>None at the moment :D</em></p>
+          <!--   <p><em>None at the moment :D</em></p> -->
 
-          </div>
+          <!-- </div> -->
 
         </div>
 
@@ -286,7 +286,24 @@
           </ul><!-- End Portfolio Filters -->
 
           <div class="row gy-4 isotope-container temp-portfolio-container">
-            <!-- will be filled by javascript using one of template below -->
+
+          {% assign sorted_projects = site.data.proj_details | sort: 'priority' %}
+          {% for project in sorted_projects %}
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item {{ project.filter | join: ' ' }}">
+              <div class="portfolio-content h-100">
+                <img class="img-fluid" src="{{ project.preview_img_thumb }}">
+                <div class="portfolio-info">
+                  <h4>{{ project.name }}</h4>
+                  <p>{{ project.summary_short }}</p>
+                  <a href="{{ project.preview_vid | default: project.preview_img }}" class="glightbox preview-link" data-glightbox="title: {{ project.summary_short }}; description: <a href='portfolio/{{ project.name }}.html'>More Details</a>" title="{{ project.name }}"><i class="bi bi-zoom-in"></i></a>
+                  <a href="portfolio/{{ project.name }}.html" class="details-link" title="More Details"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div>
+
+          {% endfor %}
+
           </div><!-- End Portfolio Container -->
 
           <template class="temp-portfolio-item">
@@ -377,16 +394,16 @@
   <!-- <div id="preloader"></div> -->
 
   <!-- Vendor JS Files -->
-  <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="../assets/vendor/typed.js/typed.umd.js"></script>
-  <script src="../assets/vendor/waypoints/noframework.waypoints.js"></script>
-  <script src="../assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="../assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="../assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/typed.js/typed.umd.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
 
   <!-- Main JS File -->
-  <script src="../assets/js/main.js"></script>
-  <script src="../assets/js/portfolio.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/portfolio.js"></script>
 
 </body>
 

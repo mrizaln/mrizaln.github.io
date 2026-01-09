@@ -1,0 +1,11 @@
+collections:
+  proj_details:
+    output: true
+    permalink: /portfolio/:path
+
+defaults:
+  - scope:
+      path: ""
+      type: "proj_details"
+    values:
+      layout: "proj-details"

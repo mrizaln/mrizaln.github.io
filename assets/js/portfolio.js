@@ -77,10 +77,13 @@ function initIsotope() {
 }
 
 function main() {
-  fillPortfolioItems().then(() => {
-    initGlightbox();
-    initIsotope();
-  });
+  // fillPortfolioItems().then(() => {
+  //   initGlightbox();
+  //   initIsotope();
+  // });
+
+  initGlightbox();
+  initIsotope();
 }
 
 main();
