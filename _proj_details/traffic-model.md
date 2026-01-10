@@ -40,10 +40,12 @@ learned about multithreading, synchronization using mutex, lockless programming,
 etc.
 
 Also, while I'm carrying out this project, I also have created many other projects that I used as
-dependencies of this project:
+dependencies for this project:
 
-- sync-cpp: a very simple synchronized wrapper (similar to Rust's Mutex)
-- glfw-cpp: RAII-based GLFW wrapper with multithreading in mind
-- circbuf: Circular buffer implementation
-- doublebuf: Lock-free double buffering mechanism
-- ascopet: Asynchronous scope time tracing library
+| Library   | Description                                                  |
+| --------- | ------------------------------------------------------------ |
+| sync-cpp  | a very simple synchronized wrapper (similar to Rust's Mutex) |
+| glfw-cpp  | RAII-based GLFW wrapper with multithreading in mind          |
+| circbuf   | Circular buffer implementation                               |
+| doublebuf | Lock-free double buffering mechanism                         |
+| ascopet   | Asynchronous scope time tracing library                      |
