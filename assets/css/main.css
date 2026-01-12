@@ -1236,6 +1236,13 @@ section,
   margin: 2em 0 0;
 }
 
+.portfolio-description .highlight code,
+.portfolio-description .highlight pre {
+  background-color: #1d2331;
+  display: block;
+  padding: 1em;
+}
+
 .portfolio-description figcaption {
   text-align: center;
   overflow-x: auto;
