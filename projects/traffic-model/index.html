@@ -77,14 +77,20 @@
 </div>
 
 <script>
+  const width = Math.max(window.innerWidth, 100)
+  const height = Math.max(window.innerHeight, 100)
+
+  console.log(`width: ${window.innerWidth} -> ${width}`)
+  console.log(`height: ${window.innerHeight} -> ${height}`)
+
   var Module = {
     arguments: [
       "-c", "5", "350",
       "-i", "0.41",
       "-b", "220", "1", "1", "30",
       "-b", "310", "1", "1", "50",
-      "-W", `${window.innerWidth}`,
-      "-H", `${window.innerHeight}`,
+      "-W", `${width}`,
+      "-H", `${height}`,
     ],
     preRun: [],
   }
